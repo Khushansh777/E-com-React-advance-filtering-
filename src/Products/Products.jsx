@@ -1,9 +1,238 @@
-import React from 'react'
-
+import React from "react";
+import { AiFillStar } from "react-icons/ai";
+import { IoBag } from "react-icons/io5";
+import "./Products.css";
 const Products = () => {
   return (
-    <div>Products</div>
-  )
-}
+    <div className="products">
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
 
-export default Products
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+          <IoBag></IoBag>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>{" "}
+      <div className="product-cards">
+        <img
+          src="https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg"
+          alt=""
+          className="product-image"
+        />
+        <p className="product-name">Low Trop Trainers</p>
+        <div className="product-ratings">
+          <div className="product-stars">
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+            <AiFillStar></AiFillStar>
+          </div>
+
+          <div className="product-reviews">
+            <p>(123 reveiws)</p>
+          </div>
+        </div>
+
+        <div className="product-price">
+          <div className="price-fake">$140.000</div>
+          <div className="price-real">$100.000</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Products;

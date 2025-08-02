@@ -1,0 +1,37 @@
+.products{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2vw;
+    margin-left: 20%;
+    row-gap:5vw;
+    column-gap: 3vw;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.product-cards {
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+
+img.product-image {
+    width: 150px;
+    height: 100px;
+}
+
+.product-price{
+display: flex;
+gap: 1vw;
+}
+.product-ratings{
+    display: flex;
+    gap: .4vw;
+}
+.price-fake{
+    text-decoration: line-through;
+}
+.product-name{
+    font-weight: bold;
+}

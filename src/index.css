@@ -1,8 +1,12 @@
 *{
    padding: 0;
    margin: 0;
+   font-family: sans-serif;
 }
 
+body,html{
+    overflow-x: hidden;
+}
 li{
     list-style: none;
 }
@@ -11,4 +15,9 @@ a{
     background: transparent;
     color:rgb(97, 97, 97);
     padding: 20px 10px;
+}
+button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }

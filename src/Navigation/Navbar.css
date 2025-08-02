@@ -1,0 +1,21 @@
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+   height: 10vh;
+   margin: 0 10vw;
+}
+
+.input-search{
+    width:60%;
+    border: none;
+    background-color:#F4F4F4;
+    padding: 3px 20px;
+    margin-right: 2vw;
+}
+
+.nav-icons{
+    width: 50px;
+    height: 20px;
+}
