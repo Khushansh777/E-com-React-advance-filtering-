@@ -1,7 +1,7 @@
 import React from "react";
 import "../Category/Category.css";
 import input from "../../input/input";
-const Price = () => {
+const Price = ({handleCategory}) => {
   return (
     <div>
       {" "}
@@ -12,10 +12,10 @@ const Price = () => {
           <input type="radio" name="check2" />
           <label htmlFor="category-all">All</label>
         </div>
-        {input("$0 - $50")}
-        {input("$50 -$100")}
-        {input("$100 -$150")}
-        {input("$150 -$200")}
+        {input("$0 - $50",handleCategory, "Price")}
+        {input("$50 -$100",handleCategory, "Price")}
+        {input("$100 -$150",handleCategory, "Price")}
+        {input("$150 -$200",handleCategory, "Price")}
       </div>
     </div>
   );

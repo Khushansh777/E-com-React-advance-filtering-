@@ -1,7 +1,7 @@
 import React from "react";
 import input from "../../input/input";
 import "../Category/Category.css";
-const Colors = () => {
+const Colors = ({handleCategory}) => {
   return (
     <div>
       {" "}
@@ -12,10 +12,10 @@ const Colors = () => {
           <input type="radio" name="check3" />
           <label htmlFor="category-all">All</label>
         </div>
-        {input("Blue")}
-        {input("Red")}
-        {input("Green")}
-        {input("White")}
+        {input("Blue", handleCategory, "Color")}
+        {input("Red", handleCategory, "Color")}
+        {input("Green", handleCategory, "Color")}
+        {input("White", handleCategory, "Color")}
       </div>
     </div>
   );

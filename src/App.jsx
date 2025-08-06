@@ -4,6 +4,7 @@ import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
 import products from "./db/data.jsx";
+import Cards from "./Component/Cards.jsx";
 function App() {
   const [query, setQuery] = useState("");
   const [selCategory, setSelCategory] = useState(null);
@@ -23,10 +24,10 @@ function App() {
       .includes(query.toLocaleLowerCase());
   });
 
-  const filterdata = (query, selected) => {
+  const filterdata = (products, query, selected) => {
     let data = products;
     if (query) {
-      data = filterdata;
+      data = filteredItems;
     }
     if (selected) {
       data = data.filter(({ category, title, newPrice, company, color }) => {
@@ -40,7 +41,7 @@ function App() {
     return data.map(
       ({ category, color, title, newPrice, company, prevPrice }) => {
         return (
-          <Products
+          <Cards
             key={title}
             title={title}
             color={color}
@@ -56,10 +57,10 @@ function App() {
 
   return (
     <div>
-      <Sidebar />
-      <Navbar />
-      <Recommended />
-      <Products />
+      <Sidebar handleCategory={handleCategory}/>
+      <Navbar handleCategory={handleCategory}/>
+      <Recommended handleCategory={handleCategory} />
+      <Products handleCategory={handleCategory}/>
     </div>
   );
 }
