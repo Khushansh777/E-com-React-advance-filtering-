@@ -1,5 +1,6 @@
 import React from "react";
 import "./Category.css";
+import input from "../../input/input";
 const Category = () => {
   return (
     <div className="category">
@@ -8,22 +9,10 @@ const Category = () => {
         <input type="radio" className="checkmark sidebar-label-container" name="check"/>
         <label htmlFor="category-all">All</label>
       </div>
-      <div className="category-boxes">
-        <input type="radio" className="checkmark sidebar-label-container"  name="check"/>
-        <label htmlFor="category-sneakers">Sneakers</label>
-      </div>
-      <div className="category-boxes">
-        <input type="radio" className="checkmark sidebar-label-container" name="check"/>
-        <label htmlFor="category-flats">Flats</label>
-      </div>
-      <div className="category-boxes">
-        <input type="radio" className="checkmark sidebar-label-container" name="check"/>
-        <label htmlFor="category-sandals">Sandals</label>
-      </div>
-      <div className="category-boxes">
-        <input type="radio" className="checkmark sidebar-label-container" name="check"/>
-        <label htmlFor="category-heels">Heels</label>
-      </div>
+      {input("Sneakers")}
+      {input("Flats")}
+      {input("Sandals")}
+      {input("Heels")}
     </div>
   );
 };

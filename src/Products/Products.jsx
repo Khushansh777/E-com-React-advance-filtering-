@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { IoBag } from "react-icons/io5";
 import "./Products.css";
-const Products = () => {
+const Products = ({ category, color, title, newPrice, company, prevPrice}) => {
   return (
     <div className="products">
       <div className="product-cards">

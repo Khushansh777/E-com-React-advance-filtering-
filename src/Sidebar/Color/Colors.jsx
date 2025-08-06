@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from "react";
+import input from "../../input/input";
 import "../Category/Category.css";
 const Colors = () => {
   return (
@@ -9,37 +9,16 @@ const Colors = () => {
         <h3 className="category-heading">Colors</h3>
 
         <div className="category-boxes">
-             <input type="radio" name="check3" />
-          <label htmlFor="category-all">All</label>
-       
-        </div>
-        <div className="category-boxes">
           <input type="radio" name="check3" />
-          <label htmlFor="category-sneakers">Black</label>
+          <label htmlFor="category-all">All</label>
         </div>
-        <div className="category-boxes">
-                   <input type="radio" name="check3" />
-          <label htmlFor="category-flats">Blue</label>
- 
-        </div>
-        <div className="category-boxes">
-           <input type="radio" name="check3"/>
-          <label htmlFor="category-sandals">Red</label>
-         
-        </div>
-        <div className="category-boxes">
-             <input type="radio" name="check3"/>
-          <label htmlFor="category-heels">Green</label>
-       
-        </div> 
-            <div className="category-boxes">
-             <input type="radio" name="check3"/>
-          <label htmlFor="category-heels">White</label>
-       
-        </div>
+        {input("Blue")}
+        {input("Red")}
+        {input("Green")}
+        {input("White")}
       </div>
     </div>
   );
 };
 
-export default Colors
+export default Colors;
