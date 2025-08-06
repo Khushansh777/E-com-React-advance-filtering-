@@ -6,10 +6,11 @@ const input = (title, handleClick , checkName) => {
       <input
         type="radio"
         className="checkmark sidebar-label-container"
-        name="check"
-        value={checkName}
+        name={checkName}
+        value={title}
         placeholder={title}
         onChange={handleClick}
+        title={title}
       />
       <label htmlFor={title}>{title}</label>
     </div>

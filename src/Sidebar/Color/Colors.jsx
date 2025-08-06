@@ -9,7 +9,7 @@ const Colors = ({handleCategory}) => {
         <h3 className="category-heading">Colors</h3>
 
         <div className="category-boxes">
-          <input type="radio" name="check3" />
+          <input type="radio" name="Color" onChange={handleCategory} value={''}/>
           <label htmlFor="category-all">All</label>
         </div>
         {input("Blue", handleCategory, "Color")}

@@ -4,7 +4,7 @@ import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
 import products from "./db/data.jsx";
-import Cards from "./Component/Cards.jsx";
+
 function App() {
   const [query, setQuery] = useState("");
   const [selCategory, setSelCategory] = useState(null);
@@ -15,6 +15,7 @@ function App() {
   // handle Category
   const handleCategory = (e) => {
     setSelCategory(e.target.value);
+                          console.log(e.target.value);
   };
 
   // filtered items
@@ -30,37 +31,37 @@ function App() {
       data = filteredItems;
     }
     if (selected) {
-      data = data.filter(({ category, title, newPrice, company, color }) => {
-        category === selected ||
-          title === selected ||
-          newPrice === selected ||
-          company === selected ||
-          color === selected; 
+      data = data.filter(({ category, newPrice, company, color }) => {
+        // Handle different filter types
+        if (selected.toLowerCase() === category) return true;
+        if (selected.toLowerCase() === color) return true;
+        if (selected === company) return true;
+
+        // Handle price ranges
+        const price = parseInt(newPrice);
+        if(selected === 'All' && price >= 0 && price <=200) return true
+        if (selected === "$0 - $50" && price >= 0 && price <= 50) return true;
+        if (selected === "$50 -$100" && price > 50 && price <= 100) return true;
+        if (selected === "$100 -$150" && price > 100 && price <= 150)
+          return true;
+        if (selected === "$150 -$200" && price > 150 && price <= 200)
+          return true;
+
+        return false;
       });
     }
-    return data.map(
-      ({ category, color, title, newPrice, company, prevPrice }) => {
-        return (
-          <Cards
-            key={title}
-            title={title}
-            color={color}
-            category={category}
-            company={company}
-            newPrice={newPrice}
-            prevPrice={prevPrice}
-          />
-        );
-      }
-    );
+    return data;
   };
+
+  const result = filterdata(products, query, selCategory);
+  console.log(result);
 
   return (
     <div>
-      <Sidebar handleCategory={handleCategory}/>
-      <Navbar handleCategory={handleCategory}/>
+      <Sidebar handleCategory={handleCategory} />
+      <Navbar query={query} handleInputChange={handleQuery} />
       <Recommended handleCategory={handleCategory} />
-      <Products handleCategory={handleCategory}/>
+      <Products result={result} />
     </div>
   );
 }

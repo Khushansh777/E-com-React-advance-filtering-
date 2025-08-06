@@ -9,7 +9,7 @@ const Price = ({handleCategory}) => {
         <h3 className="category-heading">Price</h3>
 
         <div className="category-boxes">
-          <input type="radio" name="check2" />
+          <input type="radio" name="Price" onChange={handleCategory} value={'All'}/>
           <label htmlFor="category-all">All</label>
         </div>
         {input("$0 - $50",handleCategory, "Price")}
