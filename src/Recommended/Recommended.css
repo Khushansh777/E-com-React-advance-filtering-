@@ -1,33 +1,54 @@
 .recommended{
-display: flex;
-justify-content: flex-start ;
-margin-left: 16%;
-align-items: center;
-width: 100%;
-height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.recom-boxes{
-    width: 35px;
-    height: 15px;
-    padding: 10px;
-    background-color: transparent;
-    border: 1px solid #e5e5e5;
-    margin-left: .4vw;
-    font-weight: 500;
-    font-size: 12.5px;
-    text-align: center;
-}
-.recom-all{
-    width: 80px ;
-    margin-left: 0;
-}
-.recon-all-boxes{
-    display: flex;
-}
 .recommended-boxes{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    gap: 1vh;
+    gap: 15px;
+}
+
+.recommended-boxes h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.recon-all-boxes{
+    display: flex;
+    gap: 10px;
+}
+
+.recon-all-boxes button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.recom-boxes{
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.recom-boxes:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.recom-all{
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
 }

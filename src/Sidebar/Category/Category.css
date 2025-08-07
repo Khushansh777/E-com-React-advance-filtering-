@@ -1,20 +1,39 @@
 .category{
-display: flex;
-flex-direction: column;
-gap: 1vw;
-}
-.category-heading{
-    font-size: 1.5vw;
-}
-.category-boxes{
     display: flex;
-    gap: .2vw;
-    font-size: .85vw;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.sidebar-label-container input:hover ~ .checkmark{
-background-color: #ccc;
+.category-heading{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
 }
-.sidebar-label-container input:hover ~ .checkmark{
-background-color: rgba(10, 42, 112, 0.8);
+
+.category-boxes{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.category-boxes input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.category-boxes label {
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+}
+
+.sidebar-label-container input:checked + label {
+    color: #007bff;
+    font-weight: 600;
 }

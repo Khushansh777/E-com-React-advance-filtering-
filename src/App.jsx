@@ -99,11 +99,13 @@ function App() {
   console.log(result);
 
   return (
-    <div>
+    <div className="app-container">
       <Sidebar handleCategory={handleCategory} />
-      <Navbar query={query} handleInputChange={handleQuery} />
-      <Recommended handleCategory={handleCategory} />
-      <Products result={result} />
+      <div className="content-area">
+        <Navbar handleInputChange={handleQuery} />
+        <Recommended handleCategory={handleCategory} />
+        <Products result={result} />
+      </div>
     </div>
   );
 }
