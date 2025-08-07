@@ -7,53 +7,95 @@ import products from "./db/data.jsx";
 
 function App() {
   const [query, setQuery] = useState("");
-  const [selCategory, setSelCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState("");
+  const [selectedCompany, setSelectedCompany] = useState("");
+
   // handle query
   const handleQuery = (e) => {
     setQuery(e.target.value);
   };
+
   // handle Category
   const handleCategory = (e) => {
-    setSelCategory(e.target.value);
-                          console.log(e.target.value);
+    const value = e.target.value;
+    console.log("Filter value:", value);
+
+    // Determine filter type and update appropriate state
+    if (
+      ["sneakers", "flats", "sandals", "heels"].includes(value.toLowerCase())
+    ) {
+      setSelectedCategory(value.toLowerCase());
+    } else if (
+      ["blue", "red", "green", "white", "black"].includes(value.toLowerCase())
+    ) {
+      setSelectedColor(value.toLowerCase());
+    } else if (value.includes("$")) {
+      setSelectedPrice(value);
+    } else if (["Nike", "Adidas", "Puma", "Vans"].includes(value)) {
+      setSelectedCompany(value);
+    } else if (value === "") {
+      // Clear all filters for "ALL Products"
+      setSelectedCategory("");
+      setSelectedColor("");
+      setSelectedPrice("");
+      setSelectedCompany("");
+    }
   };
 
-  // filtered items
-  const filteredItems = products.filter((products) => {
-    return products.title
-      .toLocaleLowerCase()
-      .includes(query.toLocaleLowerCase());
-  });
-
-  const filterdata = (products, query, selected) => {
+  const filterdata = (products, query, category, color, price, company) => {
     let data = products;
+
+    // Apply search query filter
     if (query) {
-      data = filteredItems;
+      data = data.filter((product) => {
+        return product.title.toLowerCase().includes(query.toLowerCase());
+      });
     }
-    if (selected) {
-      data = data.filter(({ category, newPrice, company, color }) => {
-        // Handle different filter types
-        if (selected.toLowerCase() === category) return true;
-        if (selected.toLowerCase() === color) return true;
-        if (selected === company) return true;
 
-        // Handle price ranges
-        const price = parseInt(newPrice);
-        if(selected === 'All' && price >= 0 && price <=200) return true
-        if (selected === "$0 - $50" && price >= 0 && price <= 50) return true;
-        if (selected === "$50 -$100" && price > 50 && price <= 100) return true;
-        if (selected === "$100 -$150" && price > 100 && price <= 150)
-          return true;
-        if (selected === "$150 -$200" && price > 150 && price <= 200)
-          return true;
+    // Apply category filter
+    if (category) {
+      data = data.filter((product) => product.category === category);
+    }
 
+    // Apply color filter
+    if (color) {
+      data = data.filter((product) => product.color === color);
+    }
+
+    // Apply company filter
+    if (company) {
+      data = data.filter((product) => product.company === company);
+    }
+
+    // Apply price filter
+    if (price) {
+      data = data.filter((product) => {
+        const productPrice = parseInt(product.newPrice);
+        if (price === "$0 - $50")
+          return productPrice >= 0 && productPrice <= 50;
+        if (price === "$50 -$100")
+          return productPrice > 50 && productPrice <= 100;
+        if (price === "$100 -$150")
+          return productPrice > 100 && productPrice <= 150;
+        if (price === "$150 -$200")
+          return productPrice > 150 && productPrice <= 200;
         return false;
       });
     }
+
     return data;
   };
 
-  const result = filterdata(products, query, selCategory);
+  const result = filterdata(
+    products,
+    query,
+    selectedCategory,
+    selectedColor,
+    selectedPrice,
+    selectedCompany
+  );
   console.log(result);
 
   return (
