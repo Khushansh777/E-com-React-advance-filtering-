@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { act, useState } from "react";
 import "./Recommended.css";
-
 const Recommended = ({ handleCategory }) => {
-  const [activeButton, setActiveButton] = useState("ALL Products");
-
-  const handleButtonClick = (value, buttonName) => {
-    setActiveButton(buttonName);
-    handleCategory({ target: { value } });
+  const [activeBtn, setActiveBtn] = useState('');
+  const buttonClick = (param, state) => {
+    setActiveBtn(state);
+    handleCategory({ target: { value: param } });
   };
 
   return (
@@ -14,50 +12,36 @@ const Recommended = ({ handleCategory }) => {
       <div className="recommended-boxes">
         <h3>Recommended</h3>
         <div className="recon-all-boxes">
-          <button onClick={() => handleButtonClick("", "ALL Products")}>
-            <div
-              className={`recom-boxes ${
-                activeButton === "ALL Products" ? "recom-all" : ""
-              }`}
-            >
-              ALL Products
-            </div>
+          <button onClick={(e) => buttonClick("", 'selected1')}>
+            <div className={`recom-boxes ${
+              activeBtn === 'selected1' ? "recom-all" : ""
+            }`}>ALL Products</div>
           </button>
-          <button onClick={() => handleButtonClick("Nike", "Nike")}>
+          <button
+            onClick={(e) => buttonClick('Nike', 'selected2')}
+          >
             <div
-              className={`recom-boxes ${
-                activeButton === "Nike" ? "recom-all" : ""
-              }`}
+              className={`recom-boxes ${activeBtn === 'selected2' ? "recom-all" : ""}`}
             >
               Nike
             </div>
           </button>
-          <button onClick={() => handleButtonClick("Adidas", "Adidas")}>
-            <div
-              className={`recom-boxes ${
-                activeButton === "Adidas" ? "recom-all" : ""
-              }`}
-            >
-              Adidas
-            </div>
+          <button
+            onClick={(e) => buttonClick('Adidas', 'selected3')}
+          >
+            <div className={`recom-boxes ${
+              activeBtn === 'selected3' ? 'recom-all' : ""
+            }`}>Adidas</div>
           </button>
-          <button onClick={() => handleButtonClick("Puma", "Puma")}>
-            <div
-              className={`recom-boxes ${
-                activeButton === "Puma" ? "recom-all" : ""
-              }`}
-            >
-              Puma
-            </div>
+          <button onClick={() => buttonClick("Puma", 'selected4')}>
+            <div className={`recom-boxes ${
+              activeBtn === 'selected4' ? 'recom-all' : ''
+            }`}>Puma</div>
           </button>
-          <button onClick={() => handleButtonClick("Vans", "Vans")}>
-            <div
-              className={`recom-boxes ${
-                activeButton === "Vans" ? "recom-all" : ""
-              }`}
-            >
-              Vans
-            </div>
+          <button onClick={() => buttonClick('Vans', 'selected5')}>
+            <div className={`recom-boxes ${
+              activeBtn === 'selected5' ? 'recom-all' : ""
+            }`}>Vans</div>
           </button>
         </div>
       </div>
