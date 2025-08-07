@@ -28,6 +28,11 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    outline: none;
+}
+
+.recon-all-boxes button:focus {
+    outline: none;
 }
 
 .recom-boxes{
@@ -39,16 +44,24 @@
     font-size: 12px;
     text-align: center;
     transition: all 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
 }
 
 .recom-boxes:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: #e3f2fd;
     border-color: #007bff;
+    transform: translateY(-1px);
 }
 
 .recom-all{
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
+    background-color: #007bff !important;
+    color: white !important;
+    border-color: #007bff !important;
+}
+
+.recom-all:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+    transform: translateY(-1px);
 }
